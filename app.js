@@ -7,11 +7,9 @@ const PORT = 3000;
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // esto diciendo que voy a permitir solicitudes desde todos los servidores
-
-    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS'); // acepto solo entradas con los metodos definidos
-
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // acepto los headers que tienen el tipo de contenido Content-Type
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 
