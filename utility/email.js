@@ -1,5 +1,5 @@
 class Email {
-    constructor(host = "smtp.gmail.com,", port = 465, secure = true, user = "eipstudios.dev@gmail.com", pass = "tqynaxnddsjrwaba") {
+    constructor(host = "smtp.gmail.com,", port = 465, secure = true, user = "eipstudios.dev@gmail.com", pass = "xeeplucykantahkx") {
         this.nodemailer = require("nodemailer");
         this.host = host;
         this.port = port;
