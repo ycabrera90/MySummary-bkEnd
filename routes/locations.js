@@ -23,6 +23,7 @@ router.post('/contact-me-mail', (req, res, next) => {
                     <div>
                     <h1>Contact Me</h1>
                     <p><span style="font-style: italic; text-decoration: underline">from:</span> ${userContact.email}</p>
+                    <p><span style="font-style: italic; text-decoration: underline">name:</span> ${userContact.name}</p>
                     <p><span style="font-style: italic; text-decoration: underline">mess:</span> ${userContact.messagge}</p>
                     </div>`;
 
