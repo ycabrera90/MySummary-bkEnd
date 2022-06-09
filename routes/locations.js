@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router(); // metodo que facilita el trabajo con las rutas
 const email = require('../utility/email');
 
-
+router.get('/', (req, res, next) => {
+    res.json({ message: 'yor server is ready to use' });
+    // res.status(404).json({ message: 'Not found!!' });
+});
 
 router.post('/contact-me-mail', (req, res, next) => {
     const userContact = {
@@ -47,41 +50,9 @@ router.post('/contact-me-mail', (req, res, next) => {
             res.json({ messagge: 'Fail to send Mail', status: false });
         }
     });
-
-    // setTimeout(() => {
-    //     mail.sedEmail(userContact.email, 'EIP Mail Confirmation', mailConfirmation).then(msg => {
-    //         if (msg) {
-    //             res.json({ messagge: 'Everything OK', status: true });
-    //         } else {
-    //             res.json({ messagge: 'Fail to send Mail', status: false });
-    //         }
-    //     });
-
-
-    // }, 2000);
-
-
-
-
-
-
-
-
-
 });
 
 
-// router.get('/location/:lid', (req, res, next) => {
-//     // el segmento :lid le dice a expres que hasta los dos punto esta aplicado el filtro. Luego de uso se guarda el valor con el identificador lid en el req
-//     console.log(locationStorage.location);
-//     const locationId = +req.params.lid;
-//     const location = locationStorage.location.find((loc) => {
-//         return loc.id === locationId;
-//     });
-//     if (!location) {
-//         res.status(404).json({ message: 'Not found!!' });
-//     }
-//     res.json({ address: location.address, coordinates: location.coords });
-// });
+
 
 module.exports = router;
